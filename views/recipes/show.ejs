@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/styles.css"/>
+  <title><%= recipe.name %> Recipe</title>
+</head>
+<body>
+    <header>
+        <h1><%= recipe.name %></h1>
+        <p><strong>By :</strong> <%= recipe.owner %>
+    </header>
+
+    <section>
+        <h2>Instructions</h2>
+        <p><%= recipe.instructions %></p>
+    </section>
+
+    <section>
+        <h2>Ingredients</h2>
+        <ul>
+            <% recipe.ingredients.forEach(function(ingredient) { %>
+                <li><%= ingredient.name %></li>
+            <% }); %>
+        </ul>
+    </section>
+    <a href="/recipes/">Back to Recipes</a>
+</body>
+</html>
